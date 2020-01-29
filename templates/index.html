@@ -1,0 +1,18 @@
+<html>
+	<head>
+
+	</head>
+	<body>
+		<button onClick="package()">打包</button>
+	</body>
+	<script src="../static/jquery-3.4.1.min.js"></script>
+	<script>
+		function package() {
+			$.get("http://127.0.0.1:6001/build?name=Wechat&workspace=/Users/design/Desktop/dabao&buildtype=Release",function(data,status){
+				let jsonData = JSON.parse(data)
+				let message = jsonData["msg"]
+				alert(message)
+    		})
+		}
+	</script>
+</html>
